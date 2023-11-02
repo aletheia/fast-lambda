@@ -4,19 +4,23 @@
   "bin": {
     "fast-lambda": "bin/fast-lambda.js"
   },
+  "type": "module",
   "scripts": {
+    "bootstrap": "cdk bootstrap",
     "build": "tsc",
     "watch": "tsc -w",
     "test": "jest",
+    "deploy": "cdk deploy",
+    "test:load": "npx artillery run ./artillery/message-load.yaml",
     "cdk": "cdk"
   },
   "devDependencies": {
     "@types/jest": "^29.5.7",
     "@types/node": "20.8.10",
-    "jest": "^29.7.0",
-    "ts-jest": "^29.1.1",
     "aws-cdk": "2.104.0",
-    "ts-node": "^10.9.1",
+    "esbuild": "^0.19.5",
+    "jest": "^29.7.0",
+    "node-fetch": "^3.3.2",
     "typescript": "~5.2.2"
   },
   "dependencies": {
