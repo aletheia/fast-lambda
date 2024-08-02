@@ -20,7 +20,7 @@ export class FastLambdaStack extends cdk.Stack {
             handler: 'handler',
             tracing: Tracing.PASS_THROUGH,
             bundling: {
-                banner: "import createRequire from 'create-require'; const require = createRequire(import.meta.url);",
+                banner: "import { createRequire } from 'node:module'; const require = createRequire(import.meta.url);",
                 minify: true,
                 format: OutputFormat.ESM,
                 tsconfig: join(__dirname, '../tsconfig.json'),
